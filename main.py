@@ -1,5 +1,5 @@
 import inputting, rename
-from pyperclip import copy
+from pyperclip import copy, paste
 
 def change_name():
     while True:
@@ -9,7 +9,8 @@ def change_name():
         else:
             print("Invalid input!!!")
 
-    name = inputting.get_input_name()
+    name = paste()
+    print(f"The name from the clipboard is: {name}")
     if change_type == "a":
         new_name = rename.space_to_underscore(name)
     else:
